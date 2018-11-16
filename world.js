@@ -1,9 +1,13 @@
 // JavaScript File
+window.onload = function () {
+    // body...
 
 var search = document.getElementById("lookup");
 var str = document.getElementById("country");
 
-search.onclick = function Lookup() {
+    search.addEventListener('click', Lookup);
+            
+            function Lookup() {
           
            /*if (str.length==0) { 
                document.getElementById("result").innerHTML="";
@@ -11,7 +15,7 @@ search.onclick = function Lookup() {
                return;
             }*/
           // body...
-           var url = "world.php?q="+str.value;
+           var url = "world.php?country="+ str.value;
           var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
@@ -23,3 +27,4 @@ search.onclick = function Lookup() {
             xhttp.open("GET", url, true);
             xhttp.send(null);
          }
+}     

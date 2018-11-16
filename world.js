@@ -4,6 +4,7 @@ window.onload = function () {
 
 var search = document.getElementById("lookup");
 var str = document.getElementById("country");
+var checkBox = document.getElementById("myCheck");
 
     search.addEventListener('click', Lookup);
             
@@ -15,7 +16,11 @@ var str = document.getElementById("country");
                return;
             }*/
           // body...
+           if (checkBox.checked == true ){
+               var url = "world.php?all=true";
+           }else {
            var url = "world.php?country="+ str.value;
+           }
           var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {

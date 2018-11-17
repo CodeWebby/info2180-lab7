@@ -6,15 +6,18 @@ var search = document.getElementById("lookup");
 var str = document.getElementById("country");
 var checkBox = document.getElementById("myCheck");
 
+
+
+
     search.addEventListener('click', Lookup);
             
             function Lookup() {
           
-           /*if (str.length==0) { 
+           if (str.value=="" && checkBox.checked == false) { 
                document.getElementById("result").innerHTML="";
                document.getElementById("result").style.border="0px";
                return;
-            }*/
+            }
           // body...
            if (checkBox.checked == true ){
                var url = "world.php?all=true";
